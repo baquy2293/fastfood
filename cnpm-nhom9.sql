@@ -2,10 +2,10 @@
 -- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 09, 2023 at 12:12 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
+-- Máy chủ: 127.0.0.1
+-- Thời gian đã tạo: Th8 28, 2024 lúc 12:50 PM
+-- Phiên bản máy phục vụ: 10.4.32-MariaDB
+-- Phiên bản PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `cnpm-nhom9`
+-- Cơ sở dữ liệu: `cnpm-nhom9`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Cấu trúc bảng cho bảng `cart`
 --
 
 CREATE TABLE `cart` (
@@ -34,7 +34,7 @@ CREATE TABLE `cart` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cart`
+-- Đang đổ dữ liệu cho bảng `cart`
 --
 
 INSERT INTO `cart` (`idCart`, `id_user`, `idCartDetail`) VALUES
@@ -43,7 +43,7 @@ INSERT INTO `cart` (`idCart`, `id_user`, `idCartDetail`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cartdetail`
+-- Cấu trúc bảng cho bảng `cartdetail`
 --
 
 CREATE TABLE `cartdetail` (
@@ -54,7 +54,7 @@ CREATE TABLE `cartdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `cartdetail`
+-- Đang đổ dữ liệu cho bảng `cartdetail`
 --
 
 INSERT INTO `cartdetail` (`id_cartDetail`, `id_product`, `qty`, `size`) VALUES
@@ -85,12 +85,16 @@ INSERT INTO `cartdetail` (`id_cartDetail`, `id_product`, `qty`, `size`) VALUES
 (158, 34, 1, 'Phần'),
 (159, 34, 1, 'Phần'),
 (160, 34, 1, 'Phần'),
-(161, 47, 1, 'Phần');
+(161, 47, 1, 'Phần'),
+(162, 35, 1, 'Phần'),
+(163, 36, 1, 'Phần'),
+(164, 34, 3, 'Phần'),
+(165, 35, 1, 'Phần');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `category`
+-- Cấu trúc bảng cho bảng `category`
 --
 
 CREATE TABLE `category` (
@@ -101,18 +105,19 @@ CREATE TABLE `category` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `category`
+-- Đang đổ dữ liệu cho bảng `category`
 --
 
 INSERT INTO `category` (`id_category`, `nameCategory`, `image`, `id_size`) VALUES
 (30, 'Đồ Ăn Nhanh', 'category01.jpg', 3),
 (31, 'Đồ Uống', 'category002.jfif', 1),
-(32, 'Combo Nhóm', '556X448-B.png', 2);
+(32, 'Combo Nhóm', '556X448-B.png', 2),
+(36, 'rrrr', 'banh xeo.jfif', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `codediscount`
+-- Cấu trúc bảng cho bảng `codediscount`
 --
 
 CREATE TABLE `codediscount` (
@@ -125,27 +130,28 @@ CREATE TABLE `codediscount` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `codediscount`
+-- Đang đổ dữ liệu cho bảng `codediscount`
 --
 
 INSERT INTO `codediscount` (`idCode`, `codeContent`, `discount`, `endDate`, `count`, `id_user`) VALUES
-(10, 'HQ1155f6', 100, '2023-09-24', 9, NULL),
-(11, 'HQ3ade5', 100, '2023-09-30', 10, NULL),
 (12, 'VA764QDF', 50, '2023-09-30', 0, 52),
 (15, 'VA764Q213', 100, '2023-09-22', 0, 52),
 (16, 'G5GDHF', 50, '2023-09-24', 1, 5),
 (17, 'VA764RGF', 50, '2023-09-30', 1, 5),
 (18, 'HR2df5b0', 100, '2023-12-01', 1, 61),
 (24, 'HRe31e54', 100, '2023-12-01', 1, 67),
-(25, 'HQ1aa4f2', 100, '2023-10-30', 9, NULL),
 (26, 'HRd5a7ea', 100, '2024-01-02', 1, 72),
 (27, 'HRda6d76', 100, '2024-01-04', 1, 73),
-(29, 'HReaed72', 100, '2024-01-05', 0, 75);
+(29, 'HReaed72', 100, '2024-01-05', 0, 75),
+(31, 'HR44a6a7', 100, '2024-11-19', 1, 78),
+(32, 'HRcdd7bd', 100, '2024-11-24', 0, 80),
+(33, 'HRfbe1eb', 100, '2024-11-26', 0, 83),
+(34, 'HQec6f1b', 100, '2024-08-31', 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `comment`
+-- Cấu trúc bảng cho bảng `comment`
 --
 
 CREATE TABLE `comment` (
@@ -158,7 +164,7 @@ CREATE TABLE `comment` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `comment`
+-- Đang đổ dữ liệu cho bảng `comment`
 --
 
 INSERT INTO `comment` (`id_comment`, `content`, `user_id`, `date`, `id_product`, `disabled`) VALUES
@@ -171,7 +177,7 @@ INSERT INTO `comment` (`id_comment`, `content`, `user_id`, `date`, `id_product`,
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedback`
+-- Cấu trúc bảng cho bảng `feedback`
 --
 
 CREATE TABLE `feedback` (
@@ -184,7 +190,7 @@ CREATE TABLE `feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `feedback`
+-- Đang đổ dữ liệu cho bảng `feedback`
 --
 
 INSERT INTO `feedback` (`idFeeback`, `idUser`, `idProduct`, `content`, `starPoint`, `dateFeedback`) VALUES
@@ -203,7 +209,7 @@ INSERT INTO `feedback` (`idFeeback`, `idUser`, `idProduct`, `content`, `starPoin
 -- --------------------------------------------------------
 
 --
--- Table structure for table `information`
+-- Cấu trúc bảng cho bảng `information`
 --
 
 CREATE TABLE `information` (
@@ -215,7 +221,7 @@ CREATE TABLE `information` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `information`
+-- Đang đổ dữ liệu cho bảng `information`
 --
 
 INSERT INTO `information` (`id_information`, `logo`, `address1`, `phone`, `email`) VALUES
@@ -224,7 +230,7 @@ INSERT INTO `information` (`id_information`, `logo`, `address1`, `phone`, `email
 -- --------------------------------------------------------
 
 --
--- Table structure for table `location_district`
+-- Cấu trúc bảng cho bảng `location_district`
 --
 
 CREATE TABLE `location_district` (
@@ -234,7 +240,7 @@ CREATE TABLE `location_district` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `location_district`
+-- Đang đổ dữ liệu cho bảng `location_district`
 --
 
 INSERT INTO `location_district` (`districtid`, `name`, `provinceid`) VALUES
@@ -272,7 +278,7 @@ INSERT INTO `location_district` (`districtid`, `name`, `provinceid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `location_province`
+-- Cấu trúc bảng cho bảng `location_province`
 --
 
 CREATE TABLE `location_province` (
@@ -281,7 +287,7 @@ CREATE TABLE `location_province` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `location_province`
+-- Đang đổ dữ liệu cho bảng `location_province`
 --
 
 INSERT INTO `location_province` (`provinceid`, `name`) VALUES
@@ -290,7 +296,7 @@ INSERT INTO `location_province` (`provinceid`, `name`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `location_ward`
+-- Cấu trúc bảng cho bảng `location_ward`
 --
 
 CREATE TABLE `location_ward` (
@@ -300,7 +306,7 @@ CREATE TABLE `location_ward` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `location_ward`
+-- Đang đổ dữ liệu cho bảng `location_ward`
 --
 
 INSERT INTO `location_ward` (`wardid`, `name`, `districtid`) VALUES
@@ -11480,7 +11486,7 @@ INSERT INTO `location_ward` (`wardid`, `name`, `districtid`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `notification`
+-- Cấu trúc bảng cho bảng `notification`
 --
 
 CREATE TABLE `notification` (
@@ -11492,7 +11498,7 @@ CREATE TABLE `notification` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `notification`
+-- Đang đổ dữ liệu cho bảng `notification`
 --
 
 INSERT INTO `notification` (`id`, `title`, `content`, `value`, `id_user`) VALUES
@@ -11545,12 +11551,32 @@ INSERT INTO `notification` (`id`, `title`, `content`, `value`, `id_user`) VALUES
 (160, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 72),
 (161, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH0034758 đã chuyển trạng thái thành ', 'Đã giao hàng', 72),
 (162, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 73),
-(164, 'Chào Mừng Bạn Đến Với PoDo', 'Bạn đã đăng ký thành công và được tặng một mã free ship: ', 'HReaed72', 75);
+(164, 'Chào Mừng Bạn Đến Với PoDo', 'Bạn đã đăng ký thành công và được tặng một mã free ship: ', 'HReaed72', 75),
+(166, 'Chào Mừng Bạn Đến Với PoDo', 'Bạn đã đăng ký thành công và được tặng một mã free ship: ', 'HR44a6a7', 78),
+(167, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 78),
+(168, 'Chào Mừng Bạn Đến Với PoDo', 'Bạn đã đăng ký thành công và được tặng một mã free ship: ', 'HRcdd7bd', 80),
+(169, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 78),
+(170, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00dec7b đã chuyển trạng thái thành ', 'Thành Công', 78),
+(171, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00b1e2a đã chuyển trạng thái thành ', 'Thành Công', 78),
+(172, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00ff98b đã chuyển trạng thái thành ', 'Thành Công', 73),
+(173, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00b1e2a đã chuyển trạng thái thành ', 'Đã giao hàng', 78),
+(174, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00ff98b đã chuyển trạng thái thành ', 'Đã giao hàng', 73),
+(175, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 78),
+(176, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH005f554 đã chuyển trạng thái thành ', 'Thành Công', 78),
+(177, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00b1e2a đã chuyển trạng thái thành ', 'Thành Công', 78),
+(178, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00ff98b đã chuyển trạng thái thành ', 'Thành Công', 73),
+(179, 'Thông Báo Hủy Đơn', 'Đơn hàng DH00ff98b đã được hủy bởi hệ thống', '', 73),
+(180, 'Chào Mừng Bạn Đến Với PoDo', 'Bạn đã đăng ký thành công và được tặng một mã free ship: ', 'HRfbe1eb', 83),
+(181, 'Đặt Hàng Thành Công', 'Chúc mừng bạn đã đặt hàng thành công', '', 78),
+(182, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00bfdf3 đã chuyển trạng thái thành ', 'Đang lên đơn', 78),
+(183, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00bfdf3 đã chuyển trạng thái thành ', 'Đang giao hàng', 78),
+(184, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00bfdf3 đã chuyển trạng thái thành ', 'Đã giao hàng', 78),
+(185, 'Đơn Hàng Đã Chuyển Trạng Thái', 'Đơn hàng DH00bfdf3 đã chuyển trạng thái thành ', 'Thành Công', 78);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `oderdetail`
+-- Cấu trúc bảng cho bảng `oderdetail`
 --
 
 CREATE TABLE `oderdetail` (
@@ -11562,7 +11588,7 @@ CREATE TABLE `oderdetail` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `oderdetail`
+-- Đang đổ dữ liệu cho bảng `oderdetail`
 --
 
 INSERT INTO `oderdetail` (`id_oderDetail`, `id_product`, `price`, `qty`, `size`) VALUES
@@ -11592,12 +11618,16 @@ INSERT INTO `oderdetail` (`id_oderDetail`, `id_product`, `price`, `qty`, `size`)
 (142, 34, 44500, 1, 'Phần'),
 (143, 34, 44500, 1, 'Phần'),
 (144, 34, 44500, 1, 'Phần'),
-(145, 47, 53200, 1, 'Phần');
+(145, 47, 53200, 1, 'Phần'),
+(146, 35, 19000, 1, 'Phần'),
+(147, 36, 29750, 1, 'Phần'),
+(148, 34, 44500, 3, 'Phần'),
+(149, 35, 19000, 1, 'Phần');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderr`
+-- Cấu trúc bảng cho bảng `orderr`
 --
 
 CREATE TABLE `orderr` (
@@ -11617,7 +11647,7 @@ CREATE TABLE `orderr` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `orderr`
+-- Đang đổ dữ liệu cho bảng `orderr`
 --
 
 INSERT INTO `orderr` (`idOder`, `codeOrder`, `idUser`, `id_oderDetail`, `status`, `nameReceiver`, `phoneReceiver`, `emailReceiver`, `adressReceiver`, `noteOrder`, `feeShip`, `dateOrder`, `feedback`) VALUES
@@ -11646,13 +11676,17 @@ INSERT INTO `orderr` (`idOder`, `codeOrder`, `idUser`, `id_oderDetail`, `status`
 (136, 'DH00d3556', 73, 141, 5, 'a', 'a', 'test2@gmail.com', 'a', 'Không', 0, '2023-10-04 15:49:13', ''),
 (137, 'DH0078186', 72, 142, 5, 'a', 'a', 'test1@gmail.com', 'a', 'Không', 35000, '2023-10-04 15:51:07', ''),
 (138, 'DH0034758', 72, 143, 5, 'a', 'a', 'test1@gmail.com', 'a', 'Không', 35000, '2023-10-04 15:54:22', ''),
-(139, 'DH00ff98b', 73, 144, 1, 'a', 'a', 'test2@gmail.com', 'a', 'Không', 35000, '2023-10-04 20:00:40', ''),
-(140, 'DH00ff98b', 73, 145, 1, 'a', 'a', 'test2@gmail.com', 'a', 'Không', 35000, '2023-10-04 20:00:40', '');
+(139, 'DH00ff98b', 73, 144, 6, 'a', 'a', 'test2@gmail.com', 'a', 'Không', 35000, '2024-08-26 15:05:14', ''),
+(140, 'DH00ff98b', 73, 145, 6, 'a', 'a', 'test2@gmail.com', 'a', 'Không', 35000, '2024-08-26 15:05:14', ''),
+(141, 'DH00b1e2a', 78, 146, 5, 'Trịnh Bá Quý', '0353762502', 'op3477662@gmail.com', '3', 'Không', 0, '2024-08-26 15:05:08', ''),
+(142, 'DH00dec7b', 78, 147, 5, ',', '0358862502', 'op3477662@gmail.com', '3', 'sđssdfsdfsdf', 35000, '2024-08-26 15:02:56', ''),
+(143, 'DH005f554', 78, 148, 5, 'ádasdas', '0358862502', 'op3477662@gmail.com', 'xa la', 'a', 35000, '2024-08-26 15:04:56', ''),
+(144, 'DH00bfdf3', 78, 149, 5, 'Trịnh Bá Quý', '4', 'op3477662@gmail.com', '3', 'sadas', 35000, '2024-08-27 03:50:55', '');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product`
+-- Cấu trúc bảng cho bảng `product`
 --
 
 CREATE TABLE `product` (
@@ -11668,13 +11702,13 @@ CREATE TABLE `product` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `product`
+-- Đang đổ dữ liệu cho bảng `product`
 --
 
 INSERT INTO `product` (`id_product`, `nameProduct`, `price`, `discount`, `image`, `describe`, `id_category`, `view`, `date`) VALUES
-(34, 'Pizza Phô Mai Đặc Biệt Delica', 50000, 11, 'product0001.jpeg', 'Pizza phong cách Ý - làm từ nguyên liệu chất lượng tươi mới mỗi ngày.', 30, 89, '2023-08-30'),
-(35, 'Khoai Tây Lutosa Size Lớn - Potato Big Size', 20000, 5, 'product002.jpeg', 'Khoai Tây Lutosa nhập từ Bỉ với độ giòn, ngon càng ăn càng nghiền. Giá chỉ 20k. Khoai tây chuẩn ăn kèm bò bit tết. Hương vị thơm ngon hấp dẫn khó quên khi thưởng thức. Hỗ trợ đặt hàng. Liên hệ tư vấn. Tư vấn ngay. Loại: Lõi vai bò Mỹ, Bắp bò Úc Shinkshan, Chả cá Surimi', 30, 162, '2023-08-30'),
-(36, ' Gà Viên Sốt Hàn Quốc Delica', 35000, 15, 'product003.jpeg', 'Viên gà có lớp vỏ giòn nhẹ, bên trong thịt mềm, nóng hổi với nước sốtcay quyện sánh đậm đà, xen lẫn với đậu phộng rang bùi bùi ăn ngon hết chê!', 30, 79, '2023-08-30'),
+(34, 'Pizza Phô Mai Đặc Biệt Delica', 50000, 11, 'product0001.jpeg', 'Pizza phong cách Ý - làm từ nguyên liệu chất lượng tươi mới mỗi ngày.', 30, 92, '2023-08-30'),
+(35, 'Khoai Tây Lutosa Size Lớn - Potato Big Size', 20000, 5, 'product002.jpeg', 'Khoai Tây Lutosa nhập từ Bỉ với độ giòn, ngon càng ăn càng nghiền. Giá chỉ 20k. Khoai tây chuẩn ăn kèm bò bit tết. Hương vị thơm ngon hấp dẫn khó quên khi thưởng thức. Hỗ trợ đặt hàng. Liên hệ tư vấn. Tư vấn ngay. Loại: Lõi vai bò Mỹ, Bắp bò Úc Shinkshan, Chả cá Surimi', 30, 166, '2023-08-30'),
+(36, ' Gà Viên Sốt Hàn Quốc Delica', 35000, 15, 'product003.jpeg', 'Viên gà có lớp vỏ giòn nhẹ, bên trong thịt mềm, nóng hổi với nước sốtcay quyện sánh đậm đà, xen lẫn với đậu phộng rang bùi bùi ăn ngon hết chê!', 30, 81, '2023-08-30'),
 (42, 'Combo Gà Viên', 85000, 0, 'product009.jpeg', '1 Miếng Gà + 1 Hộp Gà Viên (Vừa) + 1 Lon Pepsi', 32, 81, '2023-09-03'),
 (43, 'Combo Gia Đình', 355000, 10, 'product010.jpeg', '5 Miếng Gà + 2 Burger Tôm + 2 Khoai Tây chiên ( Lớn ) + 3 Lon Pepsi', 32, 168, '2023-09-03'),
 (44, 'Combo Bóng Đá', 85000, 5, 'product011.jpeg', '01 Miếng Gà + 01 Gà Popcorn (Vừa)/ Burger Tôm/ Mì Ý Pop + 01 Bắp Cải Trộn + 01 Pepsi Lon + 1 Phiếu Cào&nbsp;', 32, 91, '2023-09-03'),
@@ -11697,7 +11731,7 @@ INSERT INTO `product` (`id_product`, `nameProduct`, `price`, `discount`, `image`
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role`
+-- Cấu trúc bảng cho bảng `role`
 --
 
 CREATE TABLE `role` (
@@ -11706,7 +11740,7 @@ CREATE TABLE `role` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `role`
+-- Đang đổ dữ liệu cho bảng `role`
 --
 
 INSERT INTO `role` (`id_role`, `nameRole`) VALUES
@@ -11716,7 +11750,7 @@ INSERT INTO `role` (`id_role`, `nameRole`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `size`
+-- Cấu trúc bảng cho bảng `size`
 --
 
 CREATE TABLE `size` (
@@ -11727,7 +11761,7 @@ CREATE TABLE `size` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `size`
+-- Đang đổ dữ liệu cho bảng `size`
 --
 
 INSERT INTO `size` (`id_size`, `size1`, `size2`, `size3`) VALUES
@@ -11740,7 +11774,7 @@ INSERT INTO `size` (`id_size`, `size1`, `size2`, `size3`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slide`
+-- Cấu trúc bảng cho bảng `slide`
 --
 
 CREATE TABLE `slide` (
@@ -11750,17 +11784,18 @@ CREATE TABLE `slide` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `slide`
+-- Đang đổ dữ liệu cho bảng `slide`
 --
 
 INSERT INTO `slide` (`id_silde`, `image`, `link`) VALUES
 (1, 'banner002.jpg', 'http://localhost/Du-An-1-Poly-main/Product_Detail/sanpham.php?id=47'),
-(2, 'banner-web01.png', 'http://localhost/Du-An-1-Poly-main/Product_Detail/sanpham.php?id=36');
+(2, 'banner-web01.png', 'http://localhost/Du-An-1-Poly-main/Product_Detail/sanpham.php?id=36'),
+(17, 'ar2 .png', 'abc');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `status`
+-- Cấu trúc bảng cho bảng `status`
 --
 
 CREATE TABLE `status` (
@@ -11769,7 +11804,7 @@ CREATE TABLE `status` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Dumping data for table `status`
+-- Đang đổ dữ liệu cho bảng `status`
 --
 
 INSERT INTO `status` (`id`, `statusName`) VALUES
@@ -11783,7 +11818,7 @@ INSERT INTO `status` (`id`, `statusName`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `user`
+-- Cấu trúc bảng cho bảng `user`
 --
 
 CREATE TABLE `user` (
@@ -11801,11 +11836,11 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `user`
+-- Đang đổ dữ liệu cho bảng `user`
 --
 
 INSERT INTO `user` (`idUser`, `userName`, `passWord`, `email`, `phone`, `fullName`, `isAdmin`, `id_role`, `image`, `adress`, `disabled`) VALUES
-(5, 'admin', '123', 'vodinh2000ht@gmail.com', '0981973347', 'Chien Thang', b'1', 1, 'avata_emty.png', 'KMA, Thanh Tri, Chien Thang', b'0'),
+(5, 'admin', '25d55ad283aa400af464c76d713c07ad', 'vodinh2000ht@gmail.com', '0981973347', 'Chien Thang', b'1', 1, 'avata_emty.png', 'KMA, Thanh Tri, Chien Thang', b'0'),
 (48, 'tuan', '202cb962ac59075b964b07152d234b70', 'tuan1234@gmail.com', '0329766459', 'Trần Quốc Tuấn', b'0', 1, '728.jpg', '154 Nguyễn Văn Giáp, Mỹ Đình, Nam Từ Liêm', b'0'),
 (50, 'thanh1501', '202cb962ac59075b964b07152d234b70', 'vodinh2000hn@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0'),
 (51, 'vodinh2', '202cb962ac59075b964b07152d234b70', 'vodinh2000sub@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0'),
@@ -11818,14 +11853,17 @@ INSERT INTO `user` (`idUser`, `userName`, `passWord`, `email`, `phone`, `fullNam
 (71, 'tuaww', '202cb962ac59075b964b07152d234b70', 'vodinh200ddff0ht@gmail.com', '', '', b'0', 2, 'topic3.png', '', b'0'),
 (72, 'test1', 'e10adc3949ba59abbe56e057f20f883e', 'test1@gmail.com', '', '', b'1', 1, 'avata_emty.png', '', b'0'),
 (73, 'test2', 'e10adc3949ba59abbe56e057f20f883e', 'test2@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0'),
-(75, 'test3', 'e10adc3949ba59abbe56e057f20f883e', 'test3@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0');
+(75, 'test3', 'e10adc3949ba59abbe56e057f20f883e', 'test3@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0'),
+(78, 'Trịnh Bá Quý', '25d55ad283aa400af464c76d713c07ad', 'op3477662@gmail.com', '', '', b'0', 2, 'favicon.png', '', b'0'),
+(80, 'employee1', '25d55ad283aa400af464c76d713c07ad', 'tuhocvaphattrien@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0'),
+(83, 'abcd', '25d55ad283aa400af464c76d713c07ad', 'baquycr@gmail.com', '', '', b'0', 2, 'avata_emty.png', '', b'0');
 
 --
--- Indexes for dumped tables
+-- Chỉ mục cho các bảng đã đổ
 --
 
 --
--- Indexes for table `cart`
+-- Chỉ mục cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`idCart`),
@@ -11833,28 +11871,28 @@ ALTER TABLE `cart`
   ADD KEY `idCartDetail` (`idCartDetail`);
 
 --
--- Indexes for table `cartdetail`
+-- Chỉ mục cho bảng `cartdetail`
 --
 ALTER TABLE `cartdetail`
   ADD PRIMARY KEY (`id_cartDetail`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `category`
+-- Chỉ mục cho bảng `category`
 --
 ALTER TABLE `category`
   ADD PRIMARY KEY (`id_category`),
   ADD KEY `id_size` (`id_size`);
 
 --
--- Indexes for table `codediscount`
+-- Chỉ mục cho bảng `codediscount`
 --
 ALTER TABLE `codediscount`
   ADD PRIMARY KEY (`idCode`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `comment`
+-- Chỉ mục cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD PRIMARY KEY (`id_comment`),
@@ -11862,7 +11900,7 @@ ALTER TABLE `comment`
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `feedback`
+-- Chỉ mục cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD PRIMARY KEY (`idFeeback`),
@@ -11870,46 +11908,46 @@ ALTER TABLE `feedback`
   ADD KEY `idUser` (`idUser`);
 
 --
--- Indexes for table `information`
+-- Chỉ mục cho bảng `information`
 --
 ALTER TABLE `information`
   ADD PRIMARY KEY (`id_information`);
 
 --
--- Indexes for table `location_district`
+-- Chỉ mục cho bảng `location_district`
 --
 ALTER TABLE `location_district`
   ADD PRIMARY KEY (`districtid`),
   ADD KEY `provinceid` (`provinceid`);
 
 --
--- Indexes for table `location_province`
+-- Chỉ mục cho bảng `location_province`
 --
 ALTER TABLE `location_province`
   ADD PRIMARY KEY (`provinceid`);
 
 --
--- Indexes for table `location_ward`
+-- Chỉ mục cho bảng `location_ward`
 --
 ALTER TABLE `location_ward`
   ADD PRIMARY KEY (`wardid`);
 
 --
--- Indexes for table `notification`
+-- Chỉ mục cho bảng `notification`
 --
 ALTER TABLE `notification`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_user` (`id_user`);
 
 --
--- Indexes for table `oderdetail`
+-- Chỉ mục cho bảng `oderdetail`
 --
 ALTER TABLE `oderdetail`
   ADD PRIMARY KEY (`id_oderDetail`),
   ADD KEY `id_product` (`id_product`);
 
 --
--- Indexes for table `orderr`
+-- Chỉ mục cho bảng `orderr`
 --
 ALTER TABLE `orderr`
   ADD PRIMARY KEY (`idOder`),
@@ -11918,38 +11956,38 @@ ALTER TABLE `orderr`
   ADD KEY `id_oderDetail` (`id_oderDetail`);
 
 --
--- Indexes for table `product`
+-- Chỉ mục cho bảng `product`
 --
 ALTER TABLE `product`
   ADD PRIMARY KEY (`id_product`),
   ADD KEY `id_category` (`id_category`);
 
 --
--- Indexes for table `role`
+-- Chỉ mục cho bảng `role`
 --
 ALTER TABLE `role`
   ADD PRIMARY KEY (`id_role`);
 
 --
--- Indexes for table `size`
+-- Chỉ mục cho bảng `size`
 --
 ALTER TABLE `size`
   ADD PRIMARY KEY (`id_size`);
 
 --
--- Indexes for table `slide`
+-- Chỉ mục cho bảng `slide`
 --
 ALTER TABLE `slide`
   ADD PRIMARY KEY (`id_silde`);
 
 --
--- Indexes for table `status`
+-- Chỉ mục cho bảng `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `user`
+-- Chỉ mục cho bảng `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`idUser`),
@@ -11958,168 +11996,168 @@ ALTER TABLE `user`
   ADD KEY `id_role` (`id_role`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT cho các bảng đã đổ
 --
 
 --
--- AUTO_INCREMENT for table `cart`
+-- AUTO_INCREMENT cho bảng `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã oder', AUTO_INCREMENT=162;
+  MODIFY `idCart` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã oder', AUTO_INCREMENT=166;
 
 --
--- AUTO_INCREMENT for table `cartdetail`
+-- AUTO_INCREMENT cho bảng `cartdetail`
 --
 ALTER TABLE `cartdetail`
-  MODIFY `id_cartDetail` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã order chi tiết', AUTO_INCREMENT=162;
+  MODIFY `id_cartDetail` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã order chi tiết', AUTO_INCREMENT=166;
 
 --
--- AUTO_INCREMENT for table `category`
+-- AUTO_INCREMENT cho bảng `category`
 --
 ALTER TABLE `category`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã loại sản phẩm', AUTO_INCREMENT=36;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã loại sản phẩm', AUTO_INCREMENT=37;
 
 --
--- AUTO_INCREMENT for table `codediscount`
+-- AUTO_INCREMENT cho bảng `codediscount`
 --
 ALTER TABLE `codediscount`
-  MODIFY `idCode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `idCode` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 
 --
--- AUTO_INCREMENT for table `comment`
+-- AUTO_INCREMENT cho bảng `comment`
 --
 ALTER TABLE `comment`
   MODIFY `id_comment` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã Bình Luận', AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `feedback`
+-- AUTO_INCREMENT cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   MODIFY `idFeeback` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã phản hồi', AUTO_INCREMENT=25;
 
 --
--- AUTO_INCREMENT for table `information`
+-- AUTO_INCREMENT cho bảng `information`
 --
 ALTER TABLE `information`
   MODIFY `id_information` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT for table `notification`
+-- AUTO_INCREMENT cho bảng `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã Thông Báo', AUTO_INCREMENT=166;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã Thông Báo', AUTO_INCREMENT=186;
 
 --
--- AUTO_INCREMENT for table `oderdetail`
+-- AUTO_INCREMENT cho bảng `oderdetail`
 --
 ALTER TABLE `oderdetail`
-  MODIFY `id_oderDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=146;
+  MODIFY `id_oderDetail` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=150;
 
 --
--- AUTO_INCREMENT for table `orderr`
+-- AUTO_INCREMENT cho bảng `orderr`
 --
 ALTER TABLE `orderr`
-  MODIFY `idOder` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã đơn hàng', AUTO_INCREMENT=141;
+  MODIFY `idOder` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã đơn hàng', AUTO_INCREMENT=145;
 
 --
--- AUTO_INCREMENT for table `product`
+-- AUTO_INCREMENT cho bảng `product`
 --
 ALTER TABLE `product`
   MODIFY `id_product` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã sản phẩm', AUTO_INCREMENT=64;
 
 --
--- AUTO_INCREMENT for table `role`
+-- AUTO_INCREMENT cho bảng `role`
 --
 ALTER TABLE `role`
   MODIFY `id_role` int(11) NOT NULL AUTO_INCREMENT COMMENT 'Mã Vai trò', AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT for table `size`
+-- AUTO_INCREMENT cho bảng `size`
 --
 ALTER TABLE `size`
   MODIFY `id_size` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `slide`
+-- AUTO_INCREMENT cho bảng `slide`
 --
 ALTER TABLE `slide`
-  MODIFY `id_silde` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã slider', AUTO_INCREMENT=17;
+  MODIFY `id_silde` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã slider', AUTO_INCREMENT=18;
 
 --
--- AUTO_INCREMENT for table `status`
+-- AUTO_INCREMENT cho bảng `status`
 --
 ALTER TABLE `status`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'mã trạng thái', AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `user`
+-- AUTO_INCREMENT cho bảng `user`
 --
 ALTER TABLE `user`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=77;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
--- Constraints for dumped tables
+-- Các ràng buộc cho các bảng đã đổ
 --
 
 --
--- Constraints for table `cart`
+-- Các ràng buộc cho bảng `cart`
 --
 ALTER TABLE `cart`
   ADD CONSTRAINT `cart_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`idUser`),
   ADD CONSTRAINT `cart_ibfk_2` FOREIGN KEY (`idCartDetail`) REFERENCES `cartdetail` (`id_cartDetail`);
 
 --
--- Constraints for table `cartdetail`
+-- Các ràng buộc cho bảng `cartdetail`
 --
 ALTER TABLE `cartdetail`
   ADD CONSTRAINT `cartdetail_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 
 --
--- Constraints for table `category`
+-- Các ràng buộc cho bảng `category`
 --
 ALTER TABLE `category`
   ADD CONSTRAINT `category_ibfk_1` FOREIGN KEY (`id_size`) REFERENCES `size` (`id_size`);
 
 --
--- Constraints for table `codediscount`
+-- Các ràng buộc cho bảng `codediscount`
 --
 ALTER TABLE `codediscount`
   ADD CONSTRAINT `codediscount_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`idUser`);
 
 --
--- Constraints for table `comment`
+-- Các ràng buộc cho bảng `comment`
 --
 ALTER TABLE `comment`
   ADD CONSTRAINT `comment_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `user` (`idUser`),
   ADD CONSTRAINT `comment_ibfk_2` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 
 --
--- Constraints for table `feedback`
+-- Các ràng buộc cho bảng `feedback`
 --
 ALTER TABLE `feedback`
   ADD CONSTRAINT `feedback_ibfk_1` FOREIGN KEY (`idProduct`) REFERENCES `product` (`id_product`),
   ADD CONSTRAINT `feedback_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`);
 
 --
--- Constraints for table `location_district`
+-- Các ràng buộc cho bảng `location_district`
 --
 ALTER TABLE `location_district`
   ADD CONSTRAINT `location_district_ibfk_1` FOREIGN KEY (`provinceid`) REFERENCES `location_province` (`provinceid`);
 
 --
--- Constraints for table `notification`
+-- Các ràng buộc cho bảng `notification`
 --
 ALTER TABLE `notification`
   ADD CONSTRAINT `notification_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `user` (`idUser`);
 
 --
--- Constraints for table `oderdetail`
+-- Các ràng buộc cho bảng `oderdetail`
 --
 ALTER TABLE `oderdetail`
   ADD CONSTRAINT `oderdetail_ibfk_1` FOREIGN KEY (`id_product`) REFERENCES `product` (`id_product`);
 
 --
--- Constraints for table `orderr`
+-- Các ràng buộc cho bảng `orderr`
 --
 ALTER TABLE `orderr`
   ADD CONSTRAINT `orderr_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `user` (`idUser`),
@@ -12127,13 +12165,13 @@ ALTER TABLE `orderr`
   ADD CONSTRAINT `orderr_ibfk_5` FOREIGN KEY (`id_oderDetail`) REFERENCES `oderdetail` (`id_oderDetail`);
 
 --
--- Constraints for table `product`
+-- Các ràng buộc cho bảng `product`
 --
 ALTER TABLE `product`
   ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`id_category`) REFERENCES `category` (`id_category`);
 
 --
--- Constraints for table `user`
+-- Các ràng buộc cho bảng `user`
 --
 ALTER TABLE `user`
   ADD CONSTRAINT `user_ibfk_1` FOREIGN KEY (`id_role`) REFERENCES `role` (`id_role`);
